@@ -79,7 +79,6 @@ local UICorner_33 = Instance.new("UICorner")
 
 KittyUI.Name = "KittyUI"
 KittyUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-KittyUI.Enabled = false
 KittyUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Gui.Name = "Gui"
@@ -667,7 +666,7 @@ UICorner_33.Parent = HellButton
 
 -- Scripts:
 
-local function YCSGY_fake_script() -- KittyUI.LocalScript 
+local function LTFQQJA_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -759,8 +758,8 @@ local function YCSGY_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(YCSGY_fake_script)()
-local function SVXLSQ_fake_script() -- NUKESERVER.KickScript 
+coroutine.wrap(LTFQQJA_fake_script)()
+local function LYREIV_fake_script() -- NUKESERVER.KickScript 
 	local script = Instance.new('Script', NUKESERVER)
 
 	script.Parent.MouseButton1Down:Connect(function(plr)
@@ -769,8 +768,8 @@ local function SVXLSQ_fake_script() -- NUKESERVER.KickScript
 		end
 	end)
 end
-coroutine.wrap(SVXLSQ_fake_script)()
-local function ILBZXK_fake_script() -- UnanchorAll.AnchorScript 
+coroutine.wrap(LYREIV_fake_script)()
+local function RMTUI_fake_script() -- UnanchorAll.AnchorScript 
 	local script = Instance.new('Script', UnanchorAll)
 
 	script.Parent.MouseButton1Down:Connect(function(plr)
@@ -787,8 +786,8 @@ local function ILBZXK_fake_script() -- UnanchorAll.AnchorScript
 		end
 	end)
 end
-coroutine.wrap(ILBZXK_fake_script)()
-local function EHRGG_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(RMTUI_fake_script)()
+local function WNOYQI_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -803,8 +802,8 @@ local function EHRGG_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(EHRGG_fake_script)()
-local function VYPQJLD_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(WNOYQI_fake_script)()
+local function DPMNE_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -823,8 +822,8 @@ local function VYPQJLD_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(VYPQJLD_fake_script)()
-local function YCRTX_fake_script() -- HellButton.HellScript 
+coroutine.wrap(DPMNE_fake_script)()
+local function XGJVLCA_fake_script() -- HellButton.HellScript 
 	local script = Instance.new('Script', HellButton)
 
 	local lightingservice = game:GetService("Lighting")
@@ -892,8 +891,8 @@ local function YCRTX_fake_script() -- HellButton.HellScript
 		end
 	end
 end
-coroutine.wrap(YCRTX_fake_script)()
-local function GKMPRMC_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(XGJVLCA_fake_script)()
+local function PXAMM_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
@@ -1077,8 +1076,8 @@ local function GKMPRMC_fake_script() -- KittyUI.RemoteScanner
 	
 	
 end
-coroutine.wrap(GKMPRMC_fake_script)()
-local function CHCVUEI_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(PXAMM_fake_script)()
+local function SCGN_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -1098,4 +1097,4 @@ local function CHCVUEI_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(CHCVUEI_fake_script)()
+coroutine.wrap(SCGN_fake_script)()
