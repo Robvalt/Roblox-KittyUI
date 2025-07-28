@@ -667,7 +667,7 @@ UICorner_33.Parent = HellButton
 
 -- Scripts:
 
-local function JRYJXR_fake_script() -- KittyUI.LocalScript 
+local function DHXXQNG_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -759,29 +759,29 @@ local function JRYJXR_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(JRYJXR_fake_script)()
-local function EMDHWZV_fake_script() -- NUKESERVER.KickScript 
+coroutine.wrap(DHXXQNG_fake_script)()
+local function WXSYIEZ_fake_script() -- NUKESERVER.KickScript 
 	local script = Instance.new('Script', NUKESERVER)
 
-	script.Parent.Clicked.OnServerEvent:Connect(function(plr)
+	script.Parent.MouseButton1Down:Connect(function(plr)
 		for i,v in ipairs(game.Players:GetChildren()) do
 			v:Kick("U GOT UR SERVER NUKED BY CHICKENBOSS AND AZTHEROZ >:)")
 		end
 	end)
 end
-coroutine.wrap(EMDHWZV_fake_script)()
-local function HGQNJQ_fake_script() -- NUKESERVER.LocalScript 
+coroutine.wrap(WXSYIEZ_fake_script)()
+local function RETXOYV_fake_script() -- NUKESERVER.LocalScript 
 	local script = Instance.new('LocalScript', NUKESERVER)
 
 	script.Parent.Activated:Connect(function()
 		script.Parent.Clicked:FireServer()
 	end)
 end
-coroutine.wrap(HGQNJQ_fake_script)()
-local function ODYNGG_fake_script() -- UnanchorAll.AnchorScript 
+coroutine.wrap(RETXOYV_fake_script)()
+local function PWJTXWJ_fake_script() -- UnanchorAll.AnchorScript 
 	local script = Instance.new('Script', UnanchorAll)
 
-	script.Parent.Clicked.OnServerEvent:Connect(function(plr)
+	script.Parent.MouseButton1Down:Connect(function(plr)
 		for i,v in ipairs(workspace:GetDescendants()) do
 			if v:IsA("BasePart") or v:IsA("Part") then
 				v.Anchored = false
@@ -795,16 +795,16 @@ local function ODYNGG_fake_script() -- UnanchorAll.AnchorScript
 		end
 	end)
 end
-coroutine.wrap(ODYNGG_fake_script)()
-local function NLGFVOW_fake_script() -- UnanchorAll.LocalScript 
+coroutine.wrap(PWJTXWJ_fake_script)()
+local function GTNYALT_fake_script() -- UnanchorAll.LocalScript 
 	local script = Instance.new('LocalScript', UnanchorAll)
 
 	script.Parent.Activated:Connect(function()
 		script.Parent.Clicked:FireServer()
 	end)
 end
-coroutine.wrap(NLGFVOW_fake_script)()
-local function NDJIVH_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(GTNYALT_fake_script)()
+local function WVBUYK_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -819,8 +819,8 @@ local function NDJIVH_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(NDJIVH_fake_script)()
-local function JNKMWJ_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(WVBUYK_fake_script)()
+local function RFDF_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -839,15 +839,15 @@ local function JNKMWJ_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(JNKMWJ_fake_script)()
-local function RCPAYO_fake_script() -- HellButton.HellScript 
+coroutine.wrap(RFDF_fake_script)()
+local function OWEM_fake_script() -- HellButton.HellScript 
 	local script = Instance.new('Script', HellButton)
 
 	local lightingservice = game:GetService("Lighting")
 	
 	local skyid = "rbxassetid://102114898275268"
 	
-	script.Parent.Clicked.OnServerEvent:Connect(function(plr)
+	script.Parent.MouseButton1Down:Connect(function(plr)
 		task.spawn(corruptskybox())
 		task.spawn(spamtpall())
 		task.spawn(spamkillall())
@@ -908,16 +908,16 @@ local function RCPAYO_fake_script() -- HellButton.HellScript
 		end
 	end
 end
-coroutine.wrap(RCPAYO_fake_script)()
-local function JDXGWMR_fake_script() -- HellButton.LocalScript 
+coroutine.wrap(OWEM_fake_script)()
+local function VXTYZM_fake_script() -- HellButton.LocalScript 
 	local script = Instance.new('LocalScript', HellButton)
 
 	script.Parent.Activated:Connect(function()
 		script.Parent.Clicked:FireServer()
 	end)
 end
-coroutine.wrap(JDXGWMR_fake_script)()
-local function FNFX_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(VXTYZM_fake_script)()
+local function CIVFRM_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
@@ -1101,8 +1101,8 @@ local function FNFX_fake_script() -- KittyUI.RemoteScanner
 	
 	
 end
-coroutine.wrap(FNFX_fake_script)()
-local function KKZNL_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(CIVFRM_fake_script)()
+local function BNEWD_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -1122,4 +1122,4 @@ local function KKZNL_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(KKZNL_fake_script)()
+coroutine.wrap(BNEWD_fake_script)()
