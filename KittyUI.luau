@@ -667,7 +667,7 @@ UICorner_33.Parent = HellButton
 
 -- Scripts:
 
-local function DHXXQNG_fake_script() -- KittyUI.LocalScript 
+local function YCSGY_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -759,8 +759,8 @@ local function DHXXQNG_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(DHXXQNG_fake_script)()
-local function WXSYIEZ_fake_script() -- NUKESERVER.KickScript 
+coroutine.wrap(YCSGY_fake_script)()
+local function SVXLSQ_fake_script() -- NUKESERVER.KickScript 
 	local script = Instance.new('Script', NUKESERVER)
 
 	script.Parent.MouseButton1Down:Connect(function(plr)
@@ -769,16 +769,8 @@ local function WXSYIEZ_fake_script() -- NUKESERVER.KickScript
 		end
 	end)
 end
-coroutine.wrap(WXSYIEZ_fake_script)()
-local function RETXOYV_fake_script() -- NUKESERVER.LocalScript 
-	local script = Instance.new('LocalScript', NUKESERVER)
-
-	script.Parent.Activated:Connect(function()
-		script.Parent.Clicked:FireServer()
-	end)
-end
-coroutine.wrap(RETXOYV_fake_script)()
-local function PWJTXWJ_fake_script() -- UnanchorAll.AnchorScript 
+coroutine.wrap(SVXLSQ_fake_script)()
+local function ILBZXK_fake_script() -- UnanchorAll.AnchorScript 
 	local script = Instance.new('Script', UnanchorAll)
 
 	script.Parent.MouseButton1Down:Connect(function(plr)
@@ -786,8 +778,8 @@ local function PWJTXWJ_fake_script() -- UnanchorAll.AnchorScript
 			if v:IsA("BasePart") or v:IsA("Part") then
 				v.Anchored = false
 				-- add a velocity to the part
-				v.Velocity = Vector3.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))
-				v.RotVelocity = Vector3.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))
+				v.Velocity = Vector3.new(math.random(-75,75),math.random(-75,75),math.random(-75,75))
+				v.RotVelocity = Vector3.new(math.random(-75,75),math.random(-75,75),math.random(-75,75))
 				wait(0.1)
 				v.Velocity = Vector3.new(0,0,0)
 				v.RotVelocity = Vector3.new(0,0,0)
@@ -795,16 +787,8 @@ local function PWJTXWJ_fake_script() -- UnanchorAll.AnchorScript
 		end
 	end)
 end
-coroutine.wrap(PWJTXWJ_fake_script)()
-local function GTNYALT_fake_script() -- UnanchorAll.LocalScript 
-	local script = Instance.new('LocalScript', UnanchorAll)
-
-	script.Parent.Activated:Connect(function()
-		script.Parent.Clicked:FireServer()
-	end)
-end
-coroutine.wrap(GTNYALT_fake_script)()
-local function WVBUYK_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(ILBZXK_fake_script)()
+local function EHRGG_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -819,8 +803,8 @@ local function WVBUYK_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(WVBUYK_fake_script)()
-local function RFDF_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(EHRGG_fake_script)()
+local function VYPQJLD_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -839,8 +823,8 @@ local function RFDF_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(RFDF_fake_script)()
-local function OWEM_fake_script() -- HellButton.HellScript 
+coroutine.wrap(VYPQJLD_fake_script)()
+local function YCRTX_fake_script() -- HellButton.HellScript 
 	local script = Instance.new('Script', HellButton)
 
 	local lightingservice = game:GetService("Lighting")
@@ -908,16 +892,8 @@ local function OWEM_fake_script() -- HellButton.HellScript
 		end
 	end
 end
-coroutine.wrap(OWEM_fake_script)()
-local function VXTYZM_fake_script() -- HellButton.LocalScript 
-	local script = Instance.new('LocalScript', HellButton)
-
-	script.Parent.Activated:Connect(function()
-		script.Parent.Clicked:FireServer()
-	end)
-end
-coroutine.wrap(VXTYZM_fake_script)()
-local function CIVFRM_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(YCRTX_fake_script)()
+local function GKMPRMC_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
@@ -1101,8 +1077,8 @@ local function CIVFRM_fake_script() -- KittyUI.RemoteScanner
 	
 	
 end
-coroutine.wrap(CIVFRM_fake_script)()
-local function BNEWD_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(GKMPRMC_fake_script)()
+local function CHCVUEI_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -1122,4 +1098,4 @@ local function BNEWD_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(BNEWD_fake_script)()
+coroutine.wrap(CHCVUEI_fake_script)()
