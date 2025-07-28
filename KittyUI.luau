@@ -56,14 +56,18 @@ local RunButton_2 = Instance.new("TextButton")
 local UICorner_23 = Instance.new("UICorner")
 local OpenClose_2 = Instance.new("TextButton")
 local UICorner_24 = Instance.new("UICorner")
+local Arg1 = Instance.new("TextBox")
+local UICorner_25 = Instance.new("UICorner")
+local Arg2 = Instance.new("TextBox")
+local UICorner_26 = Instance.new("UICorner")
 local HumanoidMods = Instance.new("Frame")
 local Input = Instance.new("TextBox")
-local UICorner_25 = Instance.new("UICorner")
-local JumppowerButton = Instance.new("TextButton")
-local UICorner_26 = Instance.new("UICorner")
 local UICorner_27 = Instance.new("UICorner")
-local WalkspeedButton = Instance.new("TextButton")
+local JumppowerButton = Instance.new("TextButton")
 local UICorner_28 = Instance.new("UICorner")
+local UICorner_29 = Instance.new("UICorner")
+local WalkspeedButton = Instance.new("TextButton")
+local UICorner_30 = Instance.new("UICorner")
 
 --Properties:
 
@@ -503,6 +507,38 @@ OpenClose_2.TextWrapped = true
 UICorner_24.CornerRadius = UDim.new(0, 21)
 UICorner_24.Parent = OpenClose_2
 
+Arg1.Name = "Arg1"
+Arg1.Parent = RemoteEventSearch
+Arg1.BackgroundColor3 = Color3.fromRGB(0, 8, 154)
+Arg1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Arg1.BorderSizePixel = 0
+Arg1.Position = UDim2.new(-0.722021639, 0, 0.108320251, 0)
+Arg1.Size = UDim2.new(0, 200, 0, 50)
+Arg1.Font = Enum.Font.SourceSans
+Arg1.PlaceholderText = "RunArg1"
+Arg1.Text = ""
+Arg1.TextColor3 = Color3.fromRGB(0, 0, 0)
+Arg1.TextSize = 14.000
+
+UICorner_25.CornerRadius = UDim.new(0, 21)
+UICorner_25.Parent = Arg1
+
+Arg2.Name = "Arg2"
+Arg2.Parent = RemoteEventSearch
+Arg2.BackgroundColor3 = Color3.fromRGB(0, 8, 154)
+Arg2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Arg2.BorderSizePixel = 0
+Arg2.Position = UDim2.new(-0.722021639, 0, 0.186813191, 0)
+Arg2.Size = UDim2.new(0, 200, 0, 50)
+Arg2.Font = Enum.Font.SourceSans
+Arg2.PlaceholderText = "RunArg2"
+Arg2.Text = ""
+Arg2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Arg2.TextSize = 14.000
+
+UICorner_26.CornerRadius = UDim.new(0, 21)
+UICorner_26.Parent = Arg2
+
 HumanoidMods.Name = "HumanoidMods"
 HumanoidMods.Parent = Gui
 HumanoidMods.BackgroundColor3 = Color3.fromRGB(0, 8, 154)
@@ -522,10 +558,12 @@ Input.Font = Enum.Font.SourceSans
 Input.PlaceholderText = "Value"
 Input.Text = ""
 Input.TextColor3 = Color3.fromRGB(0, 0, 0)
+Input.TextScaled = true
 Input.TextSize = 14.000
+Input.TextWrapped = true
 
-UICorner_25.CornerRadius = UDim.new(0, 21)
-UICorner_25.Parent = Input
+UICorner_27.CornerRadius = UDim.new(0, 21)
+UICorner_27.Parent = Input
 
 JumppowerButton.Name = "JumppowerButton"
 JumppowerButton.Parent = HumanoidMods
@@ -537,13 +575,15 @@ JumppowerButton.Size = UDim2.new(0, 168, 0, 50)
 JumppowerButton.Font = Enum.Font.SourceSans
 JumppowerButton.Text = "Set Jumppower"
 JumppowerButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+JumppowerButton.TextScaled = true
 JumppowerButton.TextSize = 14.000
+JumppowerButton.TextWrapped = true
 
-UICorner_26.CornerRadius = UDim.new(0, 21)
-UICorner_26.Parent = JumppowerButton
+UICorner_28.CornerRadius = UDim.new(0, 21)
+UICorner_28.Parent = JumppowerButton
 
-UICorner_27.CornerRadius = UDim.new(0, 21)
-UICorner_27.Parent = HumanoidMods
+UICorner_29.CornerRadius = UDim.new(0, 21)
+UICorner_29.Parent = HumanoidMods
 
 WalkspeedButton.Name = "WalkspeedButton"
 WalkspeedButton.Parent = HumanoidMods
@@ -555,14 +595,16 @@ WalkspeedButton.Size = UDim2.new(0, 168, 0, 50)
 WalkspeedButton.Font = Enum.Font.SourceSans
 WalkspeedButton.Text = "Set Walkspeed"
 WalkspeedButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+WalkspeedButton.TextScaled = true
 WalkspeedButton.TextSize = 14.000
+WalkspeedButton.TextWrapped = true
 
-UICorner_28.CornerRadius = UDim.new(0, 21)
-UICorner_28.Parent = WalkspeedButton
+UICorner_30.CornerRadius = UDim.new(0, 21)
+UICorner_30.Parent = WalkspeedButton
 
 -- Scripts:
 
-local function SASZAB_fake_script() -- KittyUI.LocalScript 
+local function NGUD_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -654,8 +696,8 @@ local function SASZAB_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(SASZAB_fake_script)()
-local function IAOSY_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(NGUD_fake_script)()
+local function XWXQXQK_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -670,8 +712,8 @@ local function IAOSY_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(IAOSY_fake_script)()
-local function AZQQA_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(XWXQXQK_fake_script)()
+local function EWSN_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -690,8 +732,8 @@ local function AZQQA_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(AZQQA_fake_script)()
-local function SUZV_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(EWSN_fake_script)()
+local function EJBXC_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
@@ -773,6 +815,10 @@ local function SUZV_fake_script() -- KittyUI.RemoteScanner
 		print("UIListLayout already exists in RemotesList")
 	end
 	
+	-- Find Arg1 and Arg2 TextBoxes in remoteEventSearch
+	local arg1Box = remoteEventSearch:FindFirstChild("Arg1")
+	local arg2Box = remoteEventSearch:FindFirstChild("Arg2")
+	
 	if scanButton then
 		scanButton.Activated:Connect(function()
 			print("ScanRemotes button activated")
@@ -818,10 +864,27 @@ local function SUZV_fake_script() -- KittyUI.RemoteScanner
 					runButton.Position = UDim2.new(1, -70, 0, 4)
 					runButton.AnchorPoint = Vector2.new(0, 0)
 					runButton.Parent = new
-					-- Connect the RunButton to fire the RemoteEvent
+					-- Connect the RunButton to fire the RemoteEvent with args from Arg1/Arg2
 					runButton.MouseButton1Click:Connect(function()
 						print("Firing RemoteEvent:", v.Name)
-						v:FireServer()
+						local arg1 = arg1Box and arg1Box.Text or ""
+						local arg2 = arg2Box and arg2Box.Text or ""
+						-- Only use arguments if user entered something (not just placeholder)
+						local hasArg1 = arg1 ~= nil and arg1 ~= ""
+						local hasArg2 = arg2 ~= nil and arg2 ~= ""
+						if hasArg1 and hasArg2 then
+							v:FireServer(arg1, arg2)
+							print("Fired with args:", arg1, arg2)
+						elseif hasArg1 then
+							v:FireServer(arg1)
+							print("Fired with arg1:", arg1)
+						elseif hasArg2 then
+							v:FireServer(arg2)
+							print("Fired with arg2:", arg2)
+						else
+							v:FireServer()
+							print("Fired with no args")
+						end
 					end)
 					new.Parent = remotesList
 					new.Visible = true
@@ -854,8 +917,8 @@ local function SUZV_fake_script() -- KittyUI.RemoteScanner
 	
 	
 end
-coroutine.wrap(SUZV_fake_script)()
-local function OZMTER_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(EJBXC_fake_script)()
+local function JAPQKW_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -875,4 +938,4 @@ local function OZMTER_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(OZMTER_fake_script)()
+coroutine.wrap(JAPQKW_fake_script)()
