@@ -562,7 +562,7 @@ UICorner_28.Parent = WalkspeedButton
 
 -- Scripts:
 
-local function BWHVUJ_fake_script() -- KittyUI.LocalScript 
+local function SASZAB_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -654,8 +654,8 @@ local function BWHVUJ_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(BWHVUJ_fake_script)()
-local function NIBMBAK_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(SASZAB_fake_script)()
+local function IAOSY_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -670,18 +670,8 @@ local function NIBMBAK_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(NIBMBAK_fake_script)()
-local function NMOW_fake_script() -- RunButton_2.LocalScript 
-	local script = Instance.new('LocalScript', RunButton_2)
-
-	local button = script.Parent
-	local event = script.EventObj.Value
-	button.Activated:Connect(function()
-		event:FireServer()
-	end)	
-end
-coroutine.wrap(NMOW_fake_script)()
-local function CWCDL_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(IAOSY_fake_script)()
+local function AZQQA_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -700,23 +690,77 @@ local function CWCDL_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(CWCDL_fake_script)()
-local function VTFFOM_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(AZQQA_fake_script)()
+local function SUZV_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
-	local playerGui = player:WaitForChild("PlayerGui")
-	local kittyUI = playerGui:WaitForChild("KittyUI")
-	local gui = kittyUI:WaitForChild("Gui")
-	local remoteEventSearch = gui:WaitForChild("RemoteEventSearch")
-	local mainFrame = remoteEventSearch:WaitForChild("MainFrame")
-	local remotesList = mainFrame:WaitForChild("RemotesList")
-	local remoteTemplate = remotesList:WaitForChild("RemoteTemplate")
+	
+	-- Helper function for WaitForChild with timeout and debug print
+	local function safeWaitForChild(parent, childName, timeout)
+		local obj = parent:FindFirstChild(childName)
+		if obj then
+			print("Found", childName, "under", parent.Name)
+			return obj
+		end
+		obj = parent:WaitForChild(childName, timeout or 5)
+		if obj then
+			print("Waited and found", childName, "under", parent.Name)
+			return obj
+		else
+			warn("Could not find", childName, "under", parent.Name, "after timeout!")
+			return nil
+		end
+	end
+	
+	local playerGui = safeWaitForChild(player, "PlayerGui", 5)
+	if not playerGui then return end
+	
+	local kittyUI = safeWaitForChild(playerGui, "KittyUI", 5)
+	if not kittyUI then return end
+	
+	local gui = safeWaitForChild(kittyUI, "Gui", 5)
+	if not gui then return end
+	
+	local remoteEventSearch = safeWaitForChild(gui, "RemoteEventSearch", 5)
+	if not remoteEventSearch then return end
+	
+	local mainFrame = safeWaitForChild(remoteEventSearch, "MainFrame", 5)
+	if not mainFrame then return end
+	
+	local remotesList = safeWaitForChild(mainFrame, "RemotesList", 5)
+	if not remotesList then return end
+	
+	local remoteTemplate = safeWaitForChild(remotesList, "RemoteTemplate", 5)
+	if not remoteTemplate then return end
+	
 	local scanButton = mainFrame:FindFirstChild("ScanRemotes")
-	local openclosebutton = remoteEventSearch:WaitForChild("OpenClose")
+	if scanButton then
+		print("Found ScanRemotes button")
+	else
+		warn("ScanRemotes button not found in MainFrame")
+	end
+	
+	local openclosebutton = remoteEventSearch:FindFirstChild("OpenClose")
+	if openclosebutton then
+		print("Found OpenClose button")
+	else
+		warn("OpenClose button not found in RemoteEventSearch")
+	end
 	
 	-- Always keep the template invisible
 	remoteTemplate.Visible = false
+	
+	-- Debug: Check for problematic children in RemoteTemplate
+	for i = 1, #remoteTemplate:GetChildren() do
+		local v = remoteTemplate:GetChildren()[i]
+		if v:IsA("LocalScript") then
+			warn("RemoteTemplate contains a LocalScript: " .. v.Name .. ". This may cause errors. Please remove it from the template.")
+		end
+		if v.Name == "EventObj" then
+			warn("RemoteTemplate contains an 'EventObj' instance. This may cause errors. Please remove it from the template.")
+		end
+	end
 	
 	-- Ensure UIListLayout exists for proper stacking
 	local layout = remotesList:FindFirstChildOfClass("UIListLayout")
@@ -724,10 +768,14 @@ local function VTFFOM_fake_script() -- KittyUI.RemoteScanner
 		layout = Instance.new("UIListLayout")
 		layout.SortOrder = Enum.SortOrder.LayoutOrder
 		layout.Parent = remotesList
+		print("Created UIListLayout in RemotesList")
+	else
+		print("UIListLayout already exists in RemotesList")
 	end
 	
 	if scanButton then
 		scanButton.Activated:Connect(function()
+			print("ScanRemotes button activated")
 			-- Remove all frames except the template and UIListLayout
 			for i = 1, #remotesList:GetChildren() do
 				local v = remotesList:GetChildren()[i]
@@ -737,9 +785,11 @@ local function VTFFOM_fake_script() -- KittyUI.RemoteScanner
 			end
 			-- Scan for RemoteEvents in ReplicatedStorage only
 			local remotes = game.ReplicatedStorage:GetChildren()
+			local foundAny = false
 			for i = 1, #remotes do
 				local v = remotes[i]
 				if v:IsA("RemoteEvent") then
+					foundAny = true
 					local new = remoteTemplate:Clone()
 					new.Name = v.Name
 					if new:FindFirstChild("RemoteName") and new.RemoteName:IsA("TextLabel") then
@@ -749,6 +799,16 @@ local function VTFFOM_fake_script() -- KittyUI.RemoteScanner
 					local oldRunButton = new:FindFirstChild("RunButton")
 					if oldRunButton then
 						oldRunButton:Destroy()
+					end
+					-- Debug: Check for problematic children in the clone
+					for j = 1, #new:GetChildren() do
+						local child = new:GetChildren()[j]
+						if child:IsA("LocalScript") then
+							warn("RemoteTemplate clone contains a LocalScript: " .. child.Name .. ". This may cause errors. Please remove it from the template.")
+						end
+						if child.Name == "EventObj" then
+							warn("RemoteTemplate clone contains an 'EventObj' instance. This may cause errors. Please remove it from the template.")
+						end
 					end
 					-- Add a RunButton
 					local runButton = Instance.new("TextButton")
@@ -765,7 +825,11 @@ local function VTFFOM_fake_script() -- KittyUI.RemoteScanner
 					end)
 					new.Parent = remotesList
 					new.Visible = true
+					print("Added RemoteEvent frame for:", v.Name)
 				end
+			end
+			if not foundAny then
+				warn("No RemoteEvents found in ReplicatedStorage!")
 			end
 			-- Update CanvasSize to fit all frames
 			task.wait() -- Wait for UIListLayout to update
@@ -777,19 +841,21 @@ local function VTFFOM_fake_script() -- KittyUI.RemoteScanner
 				end
 			end
 			remotesList.CanvasSize = UDim2.new(0, 0, 0, totalHeight)
+			print("Updated RemotesList CanvasSize to", totalHeight)
 		end)
 	end
 	
 	if openclosebutton then
 		openclosebutton.Activated:Connect(function()
 			mainFrame.Visible = not mainFrame.Visible
+			print("Toggled MainFrame visibility to", mainFrame.Visible)
 		end)
 	end
 	
 	
 end
-coroutine.wrap(VTFFOM_fake_script)()
-local function MAWXWKG_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(SUZV_fake_script)()
+local function OZMTER_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -809,4 +875,4 @@ local function MAWXWKG_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(MAWXWKG_fake_script)()
+coroutine.wrap(OZMTER_fake_script)()
