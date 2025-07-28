@@ -666,7 +666,7 @@ UICorner_33.Parent = HellButton
 
 -- Scripts:
 
-local function LTFQQJA_fake_script() -- KittyUI.LocalScript 
+local function RHAUTY_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -758,8 +758,8 @@ local function LTFQQJA_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(LTFQQJA_fake_script)()
-local function LYREIV_fake_script() -- NUKESERVER.KickScript 
+coroutine.wrap(RHAUTY_fake_script)()
+local function QHLCA_fake_script() -- NUKESERVER.KickScript 
 	local script = Instance.new('Script', NUKESERVER)
 
 	script.Parent.MouseButton1Down:Connect(function(plr)
@@ -768,8 +768,8 @@ local function LYREIV_fake_script() -- NUKESERVER.KickScript
 		end
 	end)
 end
-coroutine.wrap(LYREIV_fake_script)()
-local function RMTUI_fake_script() -- UnanchorAll.AnchorScript 
+coroutine.wrap(QHLCA_fake_script)()
+local function GFEA_fake_script() -- UnanchorAll.AnchorScript 
 	local script = Instance.new('Script', UnanchorAll)
 
 	script.Parent.MouseButton1Down:Connect(function(plr)
@@ -786,8 +786,8 @@ local function RMTUI_fake_script() -- UnanchorAll.AnchorScript
 		end
 	end)
 end
-coroutine.wrap(RMTUI_fake_script)()
-local function WNOYQI_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(GFEA_fake_script)()
+local function FNVRA_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -802,8 +802,8 @@ local function WNOYQI_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(WNOYQI_fake_script)()
-local function DPMNE_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(FNVRA_fake_script)()
+local function RRMFOA_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -822,8 +822,8 @@ local function DPMNE_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(DPMNE_fake_script)()
-local function XGJVLCA_fake_script() -- HellButton.HellScript 
+coroutine.wrap(RRMFOA_fake_script)()
+local function XCRNIIS_fake_script() -- HellButton.HellScript 
 	local script = Instance.new('Script', HellButton)
 
 	local lightingservice = game:GetService("Lighting")
@@ -831,68 +831,62 @@ local function XGJVLCA_fake_script() -- HellButton.HellScript
 	local skyid = "rbxassetid://102114898275268"
 	
 	script.Parent.MouseButton1Down:Connect(function(plr)
-		task.spawn(corruptskybox())
-		task.spawn(spamtpall())
-		task.spawn(spamkillall())
+		task.spawn(function()
+			local newsky = Instance.new("Sky")
+			newsky.SkyboxBk = skyid
+			newsky.SkyboxDn = skyid
+			newsky.SkyboxFt = skyid
+			newsky.SkyboxRt = skyid
+			newsky.SkyboxLf = skyid
+			newsky.SkyboxUp = skyid
+			if lightingservice:FindFirstChild("Sky") then
+				lightingservice.Sky:Destroy()
+				newsky.Parent = lightingservice
+			else
+				newsky.Parent = lightingservice
+			end
+	
+			local newatmos = Instance.new("Atmosphere")
+			newatmos.Color = Color3.fromRGB(170, 0, 255)
+			newatmos.Decay = Color3.fromRGB(170, 0, 255)
+			newatmos.Glare = 0
+			newatmos.Haze = 0
+			newatmos.Density = 0.3
+			newatmos.Offset = 0.3
+			if lightingservice:FindFirstChild("Atmosphere") then
+				lightingservice.Atmosphere:Destroy()
+				newatmos.Parent = lightingservice
+			else
+				newatmos.Parent = lightingservice
+			end
+		end)
+		task.spawn(function()
+			local players = game:GetService("Players")
+			while true do
+				wait(0.1)
+				for _, player in pairs(players:GetPlayers()) do
+					if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+						local hrp = player.Character.HumanoidRootPart
+						local pos = Vector3.new(math.random(0,500), 10, math.random(0,500))
+					end
+				end
+			end
+		end)
+		task.spawn(function()
+			local players = game:GetService("Players")
+			while true do
+				wait(5)
+				for _, player in pairs(players:GetPlayers()) do
+					if player.Character and player.Character:FindFirstChild("Humanoid") then
+						player.Character.Humanoid.Health = 0
+					end
+				end
+			end
+		end)
 	end)
-	
-	function corruptskybox()
-		local newsky = Instance.new("Sky")
-		newsky.SkyboxBk = skyid
-		newsky.SkyboxDn = skyid
-		newsky.SkyboxFt = skyid
-		newsky.SkyboxRt = skyid
-		newsky.SkyboxLf = skyid
-		newsky.SkyboxUp = skyid
-		if lightingservice:FindFirstChild("Sky") then
-			lightingservice.Sky:Destroy()
-			newsky.Parent = lightingservice
-		else
-			newsky.Parent = lightingservice
-		end
-	
-		local newatmos = Instance.new("Atmosphere")
-		newatmos.Color = Color3.fromRGB(170, 0, 255)
-		newatmos.Decay = Color3.fromRGB(170, 0, 255)
-		newatmos.Glare = 0
-		newatmos.Haze = 0
-		newatmos.Density = 0.3
-		newatmos.Offset = 0.3
-		if lightingservice:FindFirstChild("Atmosphere") then
-			lightingservice.Atmosphere:Destroy()
-			newatmos.Parent = lightingservice
-		else
-			newatmos.Parent = lightingservice
-		end
-	end
-	
-	function spamtpall()
-		local players = game:GetService("Players")
-		while true do
-			wait(0.1)
-			for _, player in pairs(players:GetPlayers()) do
-				if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-					local hrp = player.Character.HumanoidRootPart
-					local pos = Vector3.new(math.random(0,500), 10, math.random(0,500))
-				end
-			end
-		end
-	end
-	
-	function spamkillall()
-		local players = game:GetService("Players")
-		while true do
-			wait(5)
-			for _, player in pairs(players:GetPlayers()) do
-				if player.Character and player.Character:FindFirstChild("Humanoid") then
-					player.Character.Humanoid.Health = 0
-				end
-			end
-		end
-	end
 end
-coroutine.wrap(XGJVLCA_fake_script)()
-local function PXAMM_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(XCRNIIS_fake_script)()
+local function ZCGGLR_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
@@ -1076,8 +1070,8 @@ local function PXAMM_fake_script() -- KittyUI.RemoteScanner
 	
 	
 end
-coroutine.wrap(PXAMM_fake_script)()
-local function SCGN_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(ZCGGLR_fake_script)()
+local function SJBRHJ_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -1097,4 +1091,4 @@ local function SCGN_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(SCGN_fake_script)()
+coroutine.wrap(SJBRHJ_fake_script)()
