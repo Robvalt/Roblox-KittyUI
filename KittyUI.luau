@@ -31,48 +31,55 @@ local PlayerToBringInput = Instance.new("TextBox")
 local UICorner_12 = Instance.new("UICorner")
 local WelcomeMsg = Instance.new("TextLabel")
 local UICorner_13 = Instance.new("UICorner")
+local NUKESERVER = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
+local UnanchorAll = Instance.new("TextButton")
+local UICorner_15 = Instance.new("UICorner")
 local RunScriptGui = Instance.new("Frame")
 local ScriptInput = Instance.new("TextBox")
-local UICorner_14 = Instance.new("UICorner")
-local RunButton = Instance.new("TextButton")
-local UICorner_15 = Instance.new("UICorner")
-local ExitButton = Instance.new("TextButton")
 local UICorner_16 = Instance.new("UICorner")
-local OpenClose = Instance.new("TextButton")
+local RunButton = Instance.new("TextButton")
 local UICorner_17 = Instance.new("UICorner")
+local ExitButton = Instance.new("TextButton")
+local UICorner_18 = Instance.new("UICorner")
+local OpenClose = Instance.new("TextButton")
+local UICorner_19 = Instance.new("UICorner")
 local RemoteEventSearch = Instance.new("Frame")
 local Title_2 = Instance.new("TextLabel")
-local UICorner_18 = Instance.new("UICorner")
+local UICorner_20 = Instance.new("UICorner")
 local MainFrame_2 = Instance.new("Frame")
 local ScanRemotes = Instance.new("TextButton")
-local UICorner_19 = Instance.new("UICorner")
-local RemotesList = Instance.new("ScrollingFrame")
-local UICorner_20 = Instance.new("UICorner")
-local RemoteTemplate = Instance.new("Frame")
 local UICorner_21 = Instance.new("UICorner")
-local RemoteName = Instance.new("TextLabel")
+local RemotesList = Instance.new("ScrollingFrame")
 local UICorner_22 = Instance.new("UICorner")
-local RunButton_2 = Instance.new("TextButton")
+local RemoteTemplate = Instance.new("Frame")
 local UICorner_23 = Instance.new("UICorner")
-local OpenClose_2 = Instance.new("TextButton")
+local RemoteName = Instance.new("TextLabel")
 local UICorner_24 = Instance.new("UICorner")
-local Arg1 = Instance.new("TextBox")
+local RunButton_2 = Instance.new("TextButton")
 local UICorner_25 = Instance.new("UICorner")
-local Arg2 = Instance.new("TextBox")
+local OpenClose_2 = Instance.new("TextButton")
 local UICorner_26 = Instance.new("UICorner")
+local Arg1 = Instance.new("TextBox")
+local UICorner_27 = Instance.new("UICorner")
+local Arg2 = Instance.new("TextBox")
+local UICorner_28 = Instance.new("UICorner")
 local HumanoidMods = Instance.new("Frame")
 local Input = Instance.new("TextBox")
-local UICorner_27 = Instance.new("UICorner")
-local JumppowerButton = Instance.new("TextButton")
-local UICorner_28 = Instance.new("UICorner")
 local UICorner_29 = Instance.new("UICorner")
-local WalkspeedButton = Instance.new("TextButton")
+local JumppowerButton = Instance.new("TextButton")
 local UICorner_30 = Instance.new("UICorner")
+local UICorner_31 = Instance.new("UICorner")
+local WalkspeedButton = Instance.new("TextButton")
+local UICorner_32 = Instance.new("UICorner")
+local HellButton = Instance.new("TextButton")
+local UICorner_33 = Instance.new("UICorner")
 
 --Properties:
 
 KittyUI.Name = "KittyUI"
 KittyUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+KittyUI.Enabled = false
 KittyUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Gui.Name = "Gui"
@@ -302,6 +309,40 @@ WelcomeMsg.TextWrapped = true
 UICorner_13.CornerRadius = UDim.new(0, 18)
 UICorner_13.Parent = WelcomeMsg
 
+NUKESERVER.Name = "NUKE SERVER"
+NUKESERVER.Parent = MainFrame
+NUKESERVER.BackgroundColor3 = Color3.fromRGB(208, 2, 5)
+NUKESERVER.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NUKESERVER.BorderSizePixel = 0
+NUKESERVER.Position = UDim2.new(0.676380396, 0, 0.0135135138, 0)
+NUKESERVER.Size = UDim2.new(0, 200, 0, 50)
+NUKESERVER.Font = Enum.Font.FredokaOne
+NUKESERVER.Text = "NUKE SERVER"
+NUKESERVER.TextColor3 = Color3.fromRGB(0, 0, 0)
+NUKESERVER.TextScaled = true
+NUKESERVER.TextSize = 14.000
+NUKESERVER.TextWrapped = true
+
+UICorner_14.CornerRadius = UDim.new(0, 18)
+UICorner_14.Parent = NUKESERVER
+
+UnanchorAll.Name = "UnanchorAll"
+UnanchorAll.Parent = MainFrame
+UnanchorAll.BackgroundColor3 = Color3.fromRGB(225, 104, 17)
+UnanchorAll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UnanchorAll.BorderSizePixel = 0
+UnanchorAll.Position = UDim2.new(0.676380396, 0, 0.153153151, 0)
+UnanchorAll.Size = UDim2.new(0, 200, 0, 50)
+UnanchorAll.Font = Enum.Font.SourceSansBold
+UnanchorAll.Text = "UNANCHOR ALL"
+UnanchorAll.TextColor3 = Color3.fromRGB(0, 0, 0)
+UnanchorAll.TextScaled = true
+UnanchorAll.TextSize = 14.000
+UnanchorAll.TextWrapped = true
+
+UICorner_15.CornerRadius = UDim.new(0, 18)
+UICorner_15.Parent = UnanchorAll
+
 RunScriptGui.Name = "RunScriptGui"
 RunScriptGui.Parent = MainFrame
 RunScriptGui.BackgroundColor3 = Color3.fromRGB(0, 8, 154)
@@ -326,8 +367,8 @@ ScriptInput.TextScaled = true
 ScriptInput.TextSize = 14.000
 ScriptInput.TextWrapped = true
 
-UICorner_14.CornerRadius = UDim.new(0, 21)
-UICorner_14.Parent = ScriptInput
+UICorner_16.CornerRadius = UDim.new(0, 21)
+UICorner_16.Parent = ScriptInput
 
 RunButton.Name = "RunButton"
 RunButton.Parent = RunScriptGui
@@ -343,8 +384,8 @@ RunButton.TextScaled = true
 RunButton.TextSize = 14.000
 RunButton.TextWrapped = true
 
-UICorner_15.CornerRadius = UDim.new(0, 21)
-UICorner_15.Parent = RunButton
+UICorner_17.CornerRadius = UDim.new(0, 21)
+UICorner_17.Parent = RunButton
 
 ExitButton.Name = "ExitButton"
 ExitButton.Parent = Gui
@@ -360,8 +401,8 @@ ExitButton.TextScaled = true
 ExitButton.TextSize = 14.000
 ExitButton.TextWrapped = true
 
-UICorner_16.CornerRadius = UDim.new(0, 18)
-UICorner_16.Parent = ExitButton
+UICorner_18.CornerRadius = UDim.new(0, 18)
+UICorner_18.Parent = ExitButton
 
 OpenClose.Name = "OpenClose"
 OpenClose.Parent = Gui
@@ -377,8 +418,8 @@ OpenClose.TextScaled = true
 OpenClose.TextSize = 14.000
 OpenClose.TextWrapped = true
 
-UICorner_17.CornerRadius = UDim.new(0, 18)
-UICorner_17.Parent = OpenClose
+UICorner_19.CornerRadius = UDim.new(0, 18)
+UICorner_19.Parent = OpenClose
 
 RemoteEventSearch.Name = "RemoteEventSearch"
 RemoteEventSearch.Parent = Gui
@@ -403,8 +444,8 @@ Title_2.TextScaled = true
 Title_2.TextSize = 14.000
 Title_2.TextWrapped = true
 
-UICorner_18.CornerRadius = UDim.new(0, 18)
-UICorner_18.Parent = Title_2
+UICorner_20.CornerRadius = UDim.new(0, 18)
+UICorner_20.Parent = Title_2
 
 MainFrame_2.Name = "MainFrame"
 MainFrame_2.Parent = RemoteEventSearch
@@ -429,8 +470,8 @@ ScanRemotes.TextScaled = true
 ScanRemotes.TextSize = 14.000
 ScanRemotes.TextWrapped = true
 
-UICorner_19.CornerRadius = UDim.new(0, 21)
-UICorner_19.Parent = ScanRemotes
+UICorner_21.CornerRadius = UDim.new(0, 21)
+UICorner_21.Parent = ScanRemotes
 
 RemotesList.Name = "RemotesList"
 RemotesList.Parent = MainFrame_2
@@ -440,9 +481,10 @@ RemotesList.BorderColor3 = Color3.fromRGB(0, 0, 0)
 RemotesList.BorderSizePixel = 0
 RemotesList.Position = UDim2.new(0.00722021656, 0, 0.0972322375, 0)
 RemotesList.Size = UDim2.new(0, 271, 0, 518)
+RemotesList.CanvasPosition = Vector2.new(0, 140)
 
-UICorner_20.CornerRadius = UDim.new(0, 21)
-UICorner_20.Parent = RemotesList
+UICorner_22.CornerRadius = UDim.new(0, 21)
+UICorner_22.Parent = RemotesList
 
 RemoteTemplate.Name = "RemoteTemplate"
 RemoteTemplate.Parent = RemotesList
@@ -453,8 +495,8 @@ RemoteTemplate.Position = UDim2.new(-0.00738007389, 0, 0.00132099015, 0)
 RemoteTemplate.Size = UDim2.new(0, 259, 0, 89)
 RemoteTemplate.Visible = false
 
-UICorner_21.CornerRadius = UDim.new(0, 21)
-UICorner_21.Parent = RemoteTemplate
+UICorner_23.CornerRadius = UDim.new(0, 21)
+UICorner_23.Parent = RemoteTemplate
 
 RemoteName.Name = "RemoteName"
 RemoteName.Parent = RemoteTemplate
@@ -470,8 +512,8 @@ RemoteName.TextScaled = true
 RemoteName.TextSize = 14.000
 RemoteName.TextWrapped = true
 
-UICorner_22.CornerRadius = UDim.new(0, 18)
-UICorner_22.Parent = RemoteName
+UICorner_24.CornerRadius = UDim.new(0, 18)
+UICorner_24.Parent = RemoteName
 
 RunButton_2.Name = "RunButton"
 RunButton_2.Parent = RemoteTemplate
@@ -487,8 +529,8 @@ RunButton_2.TextScaled = true
 RunButton_2.TextSize = 14.000
 RunButton_2.TextWrapped = true
 
-UICorner_23.CornerRadius = UDim.new(0, 18)
-UICorner_23.Parent = RunButton_2
+UICorner_25.CornerRadius = UDim.new(0, 18)
+UICorner_25.Parent = RunButton_2
 
 OpenClose_2.Name = "OpenClose"
 OpenClose_2.Parent = RemoteEventSearch
@@ -504,8 +546,8 @@ OpenClose_2.TextScaled = true
 OpenClose_2.TextSize = 14.000
 OpenClose_2.TextWrapped = true
 
-UICorner_24.CornerRadius = UDim.new(0, 21)
-UICorner_24.Parent = OpenClose_2
+UICorner_26.CornerRadius = UDim.new(0, 21)
+UICorner_26.Parent = OpenClose_2
 
 Arg1.Name = "Arg1"
 Arg1.Parent = RemoteEventSearch
@@ -518,10 +560,12 @@ Arg1.Font = Enum.Font.SourceSans
 Arg1.PlaceholderText = "RunArg1"
 Arg1.Text = ""
 Arg1.TextColor3 = Color3.fromRGB(0, 0, 0)
+Arg1.TextScaled = true
 Arg1.TextSize = 14.000
+Arg1.TextWrapped = true
 
-UICorner_25.CornerRadius = UDim.new(0, 21)
-UICorner_25.Parent = Arg1
+UICorner_27.CornerRadius = UDim.new(0, 21)
+UICorner_27.Parent = Arg1
 
 Arg2.Name = "Arg2"
 Arg2.Parent = RemoteEventSearch
@@ -534,10 +578,12 @@ Arg2.Font = Enum.Font.SourceSans
 Arg2.PlaceholderText = "RunArg2"
 Arg2.Text = ""
 Arg2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Arg2.TextScaled = true
 Arg2.TextSize = 14.000
+Arg2.TextWrapped = true
 
-UICorner_26.CornerRadius = UDim.new(0, 21)
-UICorner_26.Parent = Arg2
+UICorner_28.CornerRadius = UDim.new(0, 21)
+UICorner_28.Parent = Arg2
 
 HumanoidMods.Name = "HumanoidMods"
 HumanoidMods.Parent = Gui
@@ -562,8 +608,8 @@ Input.TextScaled = true
 Input.TextSize = 14.000
 Input.TextWrapped = true
 
-UICorner_27.CornerRadius = UDim.new(0, 21)
-UICorner_27.Parent = Input
+UICorner_29.CornerRadius = UDim.new(0, 21)
+UICorner_29.Parent = Input
 
 JumppowerButton.Name = "JumppowerButton"
 JumppowerButton.Parent = HumanoidMods
@@ -579,11 +625,11 @@ JumppowerButton.TextScaled = true
 JumppowerButton.TextSize = 14.000
 JumppowerButton.TextWrapped = true
 
-UICorner_28.CornerRadius = UDim.new(0, 21)
-UICorner_28.Parent = JumppowerButton
+UICorner_30.CornerRadius = UDim.new(0, 21)
+UICorner_30.Parent = JumppowerButton
 
-UICorner_29.CornerRadius = UDim.new(0, 21)
-UICorner_29.Parent = HumanoidMods
+UICorner_31.CornerRadius = UDim.new(0, 21)
+UICorner_31.Parent = HumanoidMods
 
 WalkspeedButton.Name = "WalkspeedButton"
 WalkspeedButton.Parent = HumanoidMods
@@ -599,12 +645,29 @@ WalkspeedButton.TextScaled = true
 WalkspeedButton.TextSize = 14.000
 WalkspeedButton.TextWrapped = true
 
-UICorner_30.CornerRadius = UDim.new(0, 21)
-UICorner_30.Parent = WalkspeedButton
+UICorner_32.CornerRadius = UDim.new(0, 21)
+UICorner_32.Parent = WalkspeedButton
+
+HellButton.Name = "HellButton"
+HellButton.Parent = Gui
+HellButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+HellButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HellButton.BorderSizePixel = 0
+HellButton.Position = UDim2.new(0.69652015, 0, 0.742638111, 0)
+HellButton.Size = UDim2.new(0, 200, 0, 50)
+HellButton.Font = Enum.Font.Michroma
+HellButton.Text = "GOTOHELL"
+HellButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+HellButton.TextScaled = true
+HellButton.TextSize = 14.000
+HellButton.TextWrapped = true
+
+UICorner_33.CornerRadius = UDim.new(0, 18)
+UICorner_33.Parent = HellButton
 
 -- Scripts:
 
-local function NGUD_fake_script() -- KittyUI.LocalScript 
+local function JRYJXR_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -696,8 +759,52 @@ local function NGUD_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(NGUD_fake_script)()
-local function XWXQXQK_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(JRYJXR_fake_script)()
+local function EMDHWZV_fake_script() -- NUKESERVER.KickScript 
+	local script = Instance.new('Script', NUKESERVER)
+
+	script.Parent.Clicked.OnServerEvent:Connect(function(plr)
+		for i,v in ipairs(game.Players:GetChildren()) do
+			v:Kick("U GOT UR SERVER NUKED BY CHICKENBOSS AND AZTHEROZ >:)")
+		end
+	end)
+end
+coroutine.wrap(EMDHWZV_fake_script)()
+local function HGQNJQ_fake_script() -- NUKESERVER.LocalScript 
+	local script = Instance.new('LocalScript', NUKESERVER)
+
+	script.Parent.Activated:Connect(function()
+		script.Parent.Clicked:FireServer()
+	end)
+end
+coroutine.wrap(HGQNJQ_fake_script)()
+local function ODYNGG_fake_script() -- UnanchorAll.AnchorScript 
+	local script = Instance.new('Script', UnanchorAll)
+
+	script.Parent.Clicked.OnServerEvent:Connect(function(plr)
+		for i,v in ipairs(workspace:GetDescendants()) do
+			if v:IsA("BasePart") or v:IsA("Part") then
+				v.Anchored = false
+				-- add a velocity to the part
+				v.Velocity = Vector3.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))
+				v.RotVelocity = Vector3.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))
+				wait(0.1)
+				v.Velocity = Vector3.new(0,0,0)
+				v.RotVelocity = Vector3.new(0,0,0)
+			end
+		end
+	end)
+end
+coroutine.wrap(ODYNGG_fake_script)()
+local function NLGFVOW_fake_script() -- UnanchorAll.LocalScript 
+	local script = Instance.new('LocalScript', UnanchorAll)
+
+	script.Parent.Activated:Connect(function()
+		script.Parent.Clicked:FireServer()
+	end)
+end
+coroutine.wrap(NLGFVOW_fake_script)()
+local function NDJIVH_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -712,8 +819,8 @@ local function XWXQXQK_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(XWXQXQK_fake_script)()
-local function EWSN_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(NDJIVH_fake_script)()
+local function JNKMWJ_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -732,8 +839,85 @@ local function EWSN_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(EWSN_fake_script)()
-local function EJBXC_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(JNKMWJ_fake_script)()
+local function RCPAYO_fake_script() -- HellButton.HellScript 
+	local script = Instance.new('Script', HellButton)
+
+	local lightingservice = game:GetService("Lighting")
+	
+	local skyid = "rbxassetid://102114898275268"
+	
+	script.Parent.Clicked.OnServerEvent:Connect(function(plr)
+		task.spawn(corruptskybox())
+		task.spawn(spamtpall())
+		task.spawn(spamkillall())
+	end)
+	
+	function corruptskybox()
+		local newsky = Instance.new("Sky")
+		newsky.SkyboxBk = skyid
+		newsky.SkyboxDn = skyid
+		newsky.SkyboxFt = skyid
+		newsky.SkyboxRt = skyid
+		newsky.SkyboxLf = skyid
+		newsky.SkyboxUp = skyid
+		if lightingservice:FindFirstChild("Sky") then
+			lightingservice.Sky:Destroy()
+			newsky.Parent = lightingservice
+		else
+			newsky.Parent = lightingservice
+		end
+	
+		local newatmos = Instance.new("Atmosphere")
+		newatmos.Color = Color3.fromRGB(170, 0, 255)
+		newatmos.Decay = Color3.fromRGB(170, 0, 255)
+		newatmos.Glare = 0
+		newatmos.Haze = 0
+		newatmos.Density = 0.3
+		newatmos.Offset = 0.3
+		if lightingservice:FindFirstChild("Atmosphere") then
+			lightingservice.Atmosphere:Destroy()
+			newatmos.Parent = lightingservice
+		else
+			newatmos.Parent = lightingservice
+		end
+	end
+	
+	function spamtpall()
+		local players = game:GetService("Players")
+		while true do
+			wait(0.1)
+			for _, player in pairs(players:GetPlayers()) do
+				if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+					local hrp = player.Character.HumanoidRootPart
+					local pos = Vector3.new(math.random(0,500), 10, math.random(0,500))
+				end
+			end
+		end
+	end
+	
+	function spamkillall()
+		local players = game:GetService("Players")
+		while true do
+			wait(5)
+			for _, player in pairs(players:GetPlayers()) do
+				if player.Character and player.Character:FindFirstChild("Humanoid") then
+					player.Character.Humanoid.Health = 0
+				end
+			end
+		end
+	end
+end
+coroutine.wrap(RCPAYO_fake_script)()
+local function JDXGWMR_fake_script() -- HellButton.LocalScript 
+	local script = Instance.new('LocalScript', HellButton)
+
+	script.Parent.Activated:Connect(function()
+		script.Parent.Clicked:FireServer()
+	end)
+end
+coroutine.wrap(JDXGWMR_fake_script)()
+local function FNFX_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
@@ -917,8 +1101,8 @@ local function EJBXC_fake_script() -- KittyUI.RemoteScanner
 	
 	
 end
-coroutine.wrap(EJBXC_fake_script)()
-local function JAPQKW_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(FNFX_fake_script)()
+local function KKZNL_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -938,4 +1122,4 @@ local function JAPQKW_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(JAPQKW_fake_script)()
+coroutine.wrap(KKZNL_fake_script)()
