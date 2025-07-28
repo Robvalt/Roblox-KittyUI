@@ -562,7 +562,7 @@ UICorner_28.Parent = WalkspeedButton
 
 -- Scripts:
 
-local function TLHBFKU_fake_script() -- KittyUI.LocalScript 
+local function BWHVUJ_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -654,8 +654,8 @@ local function TLHBFKU_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(TLHBFKU_fake_script)()
-local function VMUUJFF_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(BWHVUJ_fake_script)()
+local function NIBMBAK_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -670,8 +670,8 @@ local function VMUUJFF_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(VMUUJFF_fake_script)()
-local function DLSEOJ_fake_script() -- RunButton_2.LocalScript 
+coroutine.wrap(NIBMBAK_fake_script)()
+local function NMOW_fake_script() -- RunButton_2.LocalScript 
 	local script = Instance.new('LocalScript', RunButton_2)
 
 	local button = script.Parent
@@ -680,8 +680,8 @@ local function DLSEOJ_fake_script() -- RunButton_2.LocalScript
 		event:FireServer()
 	end)	
 end
-coroutine.wrap(DLSEOJ_fake_script)()
-local function KKHLSTS_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(NMOW_fake_script)()
+local function CWCDL_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -700,8 +700,8 @@ local function KKHLSTS_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(KKHLSTS_fake_script)()
-local function IKJP_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(CWCDL_fake_script)()
+local function VTFFOM_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
@@ -745,11 +745,26 @@ local function IKJP_fake_script() -- KittyUI.RemoteScanner
 					if new:FindFirstChild("RemoteName") and new.RemoteName:IsA("TextLabel") then
 						new.RemoteName.Text = "Name: " .. v.Name
 					end
+					-- Remove any existing RunButton to avoid duplicates
+					local oldRunButton = new:FindFirstChild("RunButton")
+					if oldRunButton then
+						oldRunButton:Destroy()
+					end
+					-- Add a RunButton
+					local runButton = Instance.new("TextButton")
+					runButton.Name = "RunButton"
+					runButton.Text = "Run"
+					runButton.Size = UDim2.new(0, 60, 0, 24)
+					runButton.Position = UDim2.new(1, -70, 0, 4)
+					runButton.AnchorPoint = Vector2.new(0, 0)
+					runButton.Parent = new
+					-- Connect the RunButton to fire the RemoteEvent
+					runButton.MouseButton1Click:Connect(function()
+						print("Firing RemoteEvent:", v.Name)
+						v:FireServer()
+					end)
 					new.Parent = remotesList
 					new.Visible = true
-					local runscript = new.RunButton.LocalScript
-					local runobj  = runscript.EventObj
-					runobj.Value = v
 				end
 			end
 			-- Update CanvasSize to fit all frames
@@ -773,8 +788,8 @@ local function IKJP_fake_script() -- KittyUI.RemoteScanner
 	
 	
 end
-coroutine.wrap(IKJP_fake_script)()
-local function VFHRW_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(VTFFOM_fake_script)()
+local function MAWXWKG_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -794,4 +809,4 @@ local function VFHRW_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(VFHRW_fake_script)()
+coroutine.wrap(MAWXWKG_fake_script)()
