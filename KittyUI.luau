@@ -666,7 +666,7 @@ UICorner_33.Parent = HellButton
 
 -- Scripts:
 
-local function RHAUTY_fake_script() -- KittyUI.LocalScript 
+local function OHXBDRP_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -758,18 +758,18 @@ local function RHAUTY_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(RHAUTY_fake_script)()
-local function QHLCA_fake_script() -- NUKESERVER.KickScript 
+coroutine.wrap(OHXBDRP_fake_script)()
+local function MGRBM_fake_script() -- NUKESERVER.KickScript 
 	local script = Instance.new('Script', NUKESERVER)
 
 	script.Parent.MouseButton1Down:Connect(function(plr)
 		for i,v in ipairs(game.Players:GetChildren()) do
-			v:Kick("U GOT UR SERVER NUKED BY CHICKENBOSS AND AZTHEROZ >:)")
+			v:Kick("U GOT UR SERVER NUKED >:)")
 		end
 	end)
 end
-coroutine.wrap(QHLCA_fake_script)()
-local function GFEA_fake_script() -- UnanchorAll.AnchorScript 
+coroutine.wrap(MGRBM_fake_script)()
+local function CLHM_fake_script() -- UnanchorAll.AnchorScript 
 	local script = Instance.new('Script', UnanchorAll)
 
 	script.Parent.MouseButton1Down:Connect(function(plr)
@@ -786,8 +786,8 @@ local function GFEA_fake_script() -- UnanchorAll.AnchorScript
 		end
 	end)
 end
-coroutine.wrap(GFEA_fake_script)()
-local function FNVRA_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(CLHM_fake_script)()
+local function RNNWSY_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -802,8 +802,8 @@ local function FNVRA_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(FNVRA_fake_script)()
-local function RRMFOA_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(RNNWSY_fake_script)()
+local function DMRM_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -822,8 +822,8 @@ local function RRMFOA_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(RRMFOA_fake_script)()
-local function XCRNIIS_fake_script() -- HellButton.HellScript 
+coroutine.wrap(DMRM_fake_script)()
+local function EDYSCNY_fake_script() -- HellButton.HellScript 
 	local script = Instance.new('Script', HellButton)
 
 	local lightingservice = game:GetService("Lighting")
@@ -885,8 +885,8 @@ local function XCRNIIS_fake_script() -- HellButton.HellScript
 		end)
 	end)
 end
-coroutine.wrap(XCRNIIS_fake_script)()
-local function ZCGGLR_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(EDYSCNY_fake_script)()
+local function JGIHGSV_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
@@ -1070,8 +1070,8 @@ local function ZCGGLR_fake_script() -- KittyUI.RemoteScanner
 	
 	
 end
-coroutine.wrap(ZCGGLR_fake_script)()
-local function SJBRHJ_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(JGIHGSV_fake_script)()
+local function GVBKVF_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -1091,4 +1091,4 @@ local function SJBRHJ_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(SJBRHJ_fake_script)()
+coroutine.wrap(GVBKVF_fake_script)()
