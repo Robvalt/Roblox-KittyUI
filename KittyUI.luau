@@ -562,7 +562,7 @@ UICorner_28.Parent = WalkspeedButton
 
 -- Scripts:
 
-local function YCTLFWE_fake_script() -- KittyUI.LocalScript 
+local function TLHBFKU_fake_script() -- KittyUI.LocalScript 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local main = script.Parent.Gui.MainFrame
@@ -609,7 +609,8 @@ local function YCTLFWE_fake_script() -- KittyUI.LocalScript
 				return InsertService:LoadAsset(gearId)
 			end)
 			if success and gear and gear:IsA("Model") then
-				for i, v in gear:GetChildren() do
+				for i = 1, #gear:GetChildren() do
+					local v = gear:GetChildren()[i]
 					if v:IsA("Tool") then
 						v.Parent = plr.Backpack
 					end
@@ -653,8 +654,8 @@ local function YCTLFWE_fake_script() -- KittyUI.LocalScript
 	
 	
 end
-coroutine.wrap(YCTLFWE_fake_script)()
-local function HDKSYFJ_fake_script() -- RunScriptGui.Handler 
+coroutine.wrap(TLHBFKU_fake_script)()
+local function VMUUJFF_fake_script() -- RunScriptGui.Handler 
 	local script = Instance.new('LocalScript', RunScriptGui)
 
 	local button = script.Parent.RunButton
@@ -669,8 +670,8 @@ local function HDKSYFJ_fake_script() -- RunScriptGui.Handler
 		newscript.Disabled = false
 	end)
 end
-coroutine.wrap(HDKSYFJ_fake_script)()
-local function KOMEO_fake_script() -- RunButton_2.LocalScript 
+coroutine.wrap(VMUUJFF_fake_script)()
+local function DLSEOJ_fake_script() -- RunButton_2.LocalScript 
 	local script = Instance.new('LocalScript', RunButton_2)
 
 	local button = script.Parent
@@ -679,8 +680,8 @@ local function KOMEO_fake_script() -- RunButton_2.LocalScript
 		event:FireServer()
 	end)	
 end
-coroutine.wrap(KOMEO_fake_script)()
-local function JVZT_fake_script() -- HumanoidMods.LocalScript 
+coroutine.wrap(DLSEOJ_fake_script)()
+local function KKHLSTS_fake_script() -- HumanoidMods.LocalScript 
 	local script = Instance.new('LocalScript', HumanoidMods)
 
 	local plr:Player = game.Players.LocalPlayer
@@ -699,8 +700,8 @@ local function JVZT_fake_script() -- HumanoidMods.LocalScript
 		humanoid.WalkSpeed = input.Text
 	end)
 end
-coroutine.wrap(JVZT_fake_script)()
-local function KEKVF_fake_script() -- KittyUI.RemoteScanner 
+coroutine.wrap(KKHLSTS_fake_script)()
+local function IKJP_fake_script() -- KittyUI.RemoteScanner 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	local player = game.Players.LocalPlayer
@@ -728,14 +729,16 @@ local function KEKVF_fake_script() -- KittyUI.RemoteScanner
 	if scanButton then
 		scanButton.Activated:Connect(function()
 			-- Remove all frames except the template and UIListLayout
-			for i, v in remotesList:GetChildren() do
+			for i = 1, #remotesList:GetChildren() do
+				local v = remotesList:GetChildren()[i]
 				if v:IsA("Frame") and v ~= remoteTemplate then
 					v:Destroy()
 				end
 			end
-			-- Scan for RemoteEvents
-			local descendants = workspace:GetDescendants()
-			for i, v in descendants do
+			-- Scan for RemoteEvents in ReplicatedStorage only
+			local remotes = game.ReplicatedStorage:GetChildren()
+			for i = 1, #remotes do
+				local v = remotes[i]
 				if v:IsA("RemoteEvent") then
 					local new = remoteTemplate:Clone()
 					new.Name = v.Name
@@ -744,12 +747,16 @@ local function KEKVF_fake_script() -- KittyUI.RemoteScanner
 					end
 					new.Parent = remotesList
 					new.Visible = true
+					local runscript = new.RunButton.LocalScript
+					local runobj  = runscript.EventObj
+					runobj.Value = v
 				end
 			end
 			-- Update CanvasSize to fit all frames
 			task.wait() -- Wait for UIListLayout to update
 			local totalHeight = 0
-			for i, v in remotesList:GetChildren() do
+			for i = 1, #remotesList:GetChildren() do
+				local v = remotesList:GetChildren()[i]
 				if v:IsA("Frame") and v ~= remoteTemplate and v.Visible then
 					totalHeight = totalHeight + v.Size.Y.Offset
 				end
@@ -763,9 +770,11 @@ local function KEKVF_fake_script() -- KittyUI.RemoteScanner
 			mainFrame.Visible = not mainFrame.Visible
 		end)
 	end
+	
+	
 end
-coroutine.wrap(KEKVF_fake_script)()
-local function XWWDEJ_fake_script() -- KittyUI.EnsureUIListLayout 
+coroutine.wrap(IKJP_fake_script)()
+local function VFHRW_fake_script() -- KittyUI.EnsureUIListLayout 
 	local script = Instance.new('LocalScript', KittyUI)
 
 	-- This script ensures a UIListLayout exists in RemotesList for proper stacking of RemoteEvent frames.
@@ -785,4 +794,4 @@ local function XWWDEJ_fake_script() -- KittyUI.EnsureUIListLayout
 	
 	
 end
-coroutine.wrap(XWWDEJ_fake_script)()
+coroutine.wrap(VFHRW_fake_script)()
